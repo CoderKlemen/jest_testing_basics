@@ -35,9 +35,40 @@ test('Should be falsy', () => {
 });
 
 // Testing objects for equality
+// toBe is for primitive types
 test('User should be Jst Polencek object', () => {
   expect(functions.createUser()).toEqual({ firstName: 'Jst', lastName: 'Polencek' });
 });
 
-// link: https://www.youtube.com/watch?v=7r4xVDI2vho
-// finished at 15:20
+// less than and greater than
+test('Should be under 1600', () => {
+  const load1 = 800;
+  const load2 = 700;
+  const load3 = 800;
+  expect(load1 + load2).toBeLessThan(1600);
+  expect(load1 + load3).toBeLessThanOrEqual(1600);
+});
+
+// regex
+test('There is no I in team', () => {
+  expect('team').not.toMatch(/I/);
+  // playing around
+  expect('teamI').toMatch(/I/);
+  expect('teami').not.toMatch(/I/);
+  expect('teami').toMatch(/I/i);
+});
+
+// arrays
+test('admin should be in username', () => {
+  const usernames = ['john', 'karen', 'admin'];
+  expect(usernames).toContain('admin');
+  expect(usernames).not.toContain('chris');
+});
+
+// working with async data
+test('user fetched name should be Leanne Graham', () => {
+  expect.assertions(1); // number of assertions we expect
+  return functions.fetchUser().then((data) => {
+    expect(data.name).toEqual('Leanne Graham');
+  });
+});
