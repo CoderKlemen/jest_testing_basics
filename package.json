@@ -1,0 +1,33 @@
+{
+  "name": "jest_testing_basics",
+  "version": "1.0.0",
+  "description": "Jest tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoderKlemen/jest_testing_basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoderKlemen/jest_testing_basics/issues"
+  },
+  "homepage": "https://github.com/CoderKlemen/jest_testing_basics#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "babel": {
+    "env": []
+  }
+}
