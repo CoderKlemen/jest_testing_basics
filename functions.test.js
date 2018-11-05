@@ -65,10 +65,30 @@ test('admin should be in username', () => {
   expect(usernames).not.toContain('chris');
 });
 
+// Promise !
 // working with async data
 test('user fetched name should be Leanne Graham', () => {
   expect.assertions(1); // number of assertions we expect
   return functions.fetchUser().then((data) => {
     expect(data.name).toEqual('Leanne Graham');
   });
+});
+
+// WRONG BEHAVIOUR -> this sometimes passes, and sometimes it doesn't
+// no matter what we put in toEqual() !!!!
+// we need both assertion and return, for it to work correctly
+/*
+test('user fetched name should be Leanne Graham', () => {
+  // expect.assertions(1); // number of assertions we expect
+  functions.fetchUser().then((data) => {
+    expect(data.name).toEqual('Leanne Graham1');
+  });
+});
+*/
+
+// Async await syntax
+test('user fetched name should be Leanne Graham', async () => {
+  expect.assertions(1); // number of assertions we expect
+  const data = await functions.fetchUser();
+  expect(data.name).toEqual('Leanne Graham');
 });
