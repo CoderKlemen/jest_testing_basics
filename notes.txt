@@ -1,3 +1,3 @@
 link: https://www.youtube.com/watch?v=7r4xVDI2vho
 
-finished at 40:04
+add --watchAll to jest in package json, to make jest run automatically!!!!

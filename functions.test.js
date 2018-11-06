@@ -1,5 +1,33 @@
 const functions = require('./functions');
 
+// dummy functions
+// const initDatabase = () => console.log('Database initialized....');
+// const closeDatabase = () => console.log('Database closed....');
+
+// Life-cycle methods - functions that run before or after each test
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+const nameCheck = () => console.log('Checking names...');
+
+describe('Checking names', () => {
+  beforeEach(() => nameCheck());
+
+  test('User is Jeff', () => {
+    const user = 'Jeff';
+    expect(user).toBe('Jeff');
+  });
+
+  test('User is Karen', () => {
+    const user = 'Karen';
+    expect(user).toBe('Karen');
+  });
+});
+
+
 // toBe
 test('Adds 2 + 2 to equal 4', () => {
   expect(functions.add(2, 2)).toBe(4);
